@@ -3,10 +3,16 @@
 {{#if todos.length}}
 <ul>
     {{#each todos}}
-    <li>
+    <li class="todo">
         <label>
-            <input type="checkbox">
-            <span></span>
+            {{#if completed}}
+                <input type="checkbox" checked>
+                <span class="complited">{{title}}</span>
+            {{else}}
+                <input type="checkbox">
+                <span>{{title}}</span>
+            {{/if}}
+
             <button class="btn btn-small">Save</button>
         </label>
     </li>
